@@ -1,0 +1,25 @@
+<p>This shit works</p>
+
+<button (click)="aumentarEdad()">Aumentar edad</button><button (click)="disminuirEdad()">Disminuir edad</button>
+
+<h4 [style.background] = "edad >= 18 ? 'green' : 'red'"
+    [style.color]="'white'" >
+    tu edad es: {{edad}}
+</h4>
+
+
+
+<div *ngIf="edad >= 18">
+    <p>Eres mayor de edad</p>
+</div>
+<div *ngIf="edad < 18" >
+    <p>eres menor de edad</p>
+</div>
+
+<h1>lista de nombres</h1>
+<p>{{nombres}}</p>
+<ul>
+    <li *ngFor="let nombre of nombres; let indice = index">
+        {{indice + '-' +nombres}}
+    </li>
+</ul>
